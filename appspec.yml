@@ -4,5 +4,5 @@ resources:
     properties:
       functionName: my-lambda-function        # Ensure function name matches exactly
       alias: lambda-poc                       # Ensure alias name matches
-      currentVersion: 1                       # The version the alias currently points to
-      targetVersion: 2                        # The version you want to switch the alias to
+      currentVersion: 2                       # The version the alias currently points to
+      targetVersion: 3                       # The version you want to switch the alias to
