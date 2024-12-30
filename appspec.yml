@@ -1,0 +1,8 @@
+version: 0.0
+resources:
+  - lambda:
+      functionName: my-lambda-function
+      deploymentId: !Ref AWS::CodeDeploy::DeploymentId
+      alias: prod
+      environmentVariables:
+        ENV_VAR_KEY: ENV_VAR_VALUE
