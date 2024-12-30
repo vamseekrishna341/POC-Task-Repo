@@ -1,12 +1,8 @@
-version: 0.0
-Resources:
-  - myLambdaFunction:
-      Type: AWS::Lambda::Function
-      Properties:
-        Name: "my-lambda-function"
-        Alias: "lambda-poc"
-        CurrentVersion: "1"
-        TargetVersion: "2"
-Hooks:
-  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
-  - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
+resources:
+  - name-of-function-to-deploy:
+      type: "AWS::Lambda::Function"
+      properties:
+        name: my-lambda-function
+        alias: lambda-poc
+        currentversion: version-of-the-lambda-function-traffic-currently-points-to
+        targetversion: version-of-the-lambda-function-to-shift-traffic-to
