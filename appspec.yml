@@ -1,8 +1,12 @@
 version: 0.0
-resources:
-  - type: AWS::Lambda::Function
-    properties:
-      functionName: my-lambda-function        # Ensure function name matches exactly
-      alias: lambda-poc                       # Ensure alias name matches
-      currentVersion: 2                       # The version the alias currently points to
-      targetVersion: 3                       # The version you want to switch the alias to
+Resources:
+  - myLambdaFunction:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "my-lambda-function"
+        Alias: "Lambda-poc"
+        CurrentVersion: "2"
+        TargetVersion: "3"
+Hooks:
+  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
+  - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
