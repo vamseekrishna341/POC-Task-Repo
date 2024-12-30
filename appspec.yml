@@ -3,5 +3,3 @@ resources:
   - lambda:
       functionName: my-lambda-function
       alias: prod
-      environmentVariables:
-        ENV_VAR_KEY: ENV_VAR_VALUE
