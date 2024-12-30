@@ -14,7 +14,7 @@ phases:
   post_build:
     commands:
       - echo "Deploying the Lambda function..."
-      - python deploy_lambda.py Lambda-POC-Task function.zip
+      - python deploy_lambda.py my-lambda-function function.zip
 artifacts:
   files:
     - function.zip
