@@ -7,10 +7,12 @@ phases:
     commands:
       - echo "Installing dependencies..."
       - pip install -r requirements.txt -t .
+      - pip install boto3
   build:
     commands:
       - echo "Zipping the Lambda function code..."
       - zip -r function.zip .
+      - ls -lh function.zip
   post_build:
     commands:
       - echo "Deploying the Lambda function..."
