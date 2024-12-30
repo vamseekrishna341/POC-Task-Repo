@@ -1,8 +1,0 @@
-resources:
-  resources:
-      type: "AWS::Lambda::Function"
-      properties:
-        name: my-lambda-function
-        alias: lambda-alias
-        currentversion: 3
-        targetversion: 4
