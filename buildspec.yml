@@ -13,7 +13,6 @@ phases:
       - echo "Zipping the Lambda function code..."
       - zip -r function.zip . 
       - ls -lh function.zip
-      - cp appspec.yml function.zip
   post_build:
     commands:
       - echo "Deploying the Lambda function..."
