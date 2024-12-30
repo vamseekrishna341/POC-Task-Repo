@@ -1,5 +1,12 @@
 version: 0.0
-resources:
-  - lambda:
-      name: my-lambda-function
-      alias: prod
+Resources:
+  - myLambdaFunction:
+      Type: AWS::Lambda::Function
+      Properties:
+        Name: "my-lambda-function"
+        Alias: "lambda-poc"
+        CurrentVersion: "1"
+        TargetVersion: "2"
+Hooks:
+  - BeforeAllowTraffic: "LambdaFunctionToValidateBeforeTrafficShift"
+  - AfterAllowTraffic: "LambdaFunctionToValidateAfterTrafficShift"
