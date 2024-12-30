@@ -4,5 +4,5 @@ resources:
       properties:
         name: my-lambda-function
         alias: lambda-poc
-        currentversion: version-of-the-lambda-function-traffic-currently-points-to
-        targetversion: version-of-the-lambda-function-to-shift-traffic-to
+        currentversion: 1
+        targetversion: 2
