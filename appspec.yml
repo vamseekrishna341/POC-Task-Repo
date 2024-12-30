@@ -1,8 +1,8 @@
+version: 0.0
 resources:
-  - name-of-function-to-deploy:
-      type: "AWS::Lambda::Function"
-      properties:
-        name: my-lambda-function
-        alias: lambda-poc
-        currentversion: 1
-        targetversion: 2
+  - type: AWS::Lambda::Function
+    properties:
+      functionName: my-lambda-function        # Ensure function name matches exactly
+      alias: lambda-poc                       # Ensure alias name matches
+      currentVersion: 1                       # The version the alias currently points to
+      targetVersion: 2                        # The version you want to switch the alias to
