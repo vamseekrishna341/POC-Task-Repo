@@ -7,10 +7,3 @@ Resources:
         Alias: "Lambda-poc"
         CurrentVersion: "2"
         TargetVersion: "3"
-Hooks:
-  BeforeAllowTraffic:
-    - location: arn:aws:lambda:us-east-2:266735821233:function:my-lambda-function
-      timeout: 300
-  - AfterAllowTraffic:
-    - location: arn:aws:lambda:us-east-2:266735821233:function:my-lambda-function
-      timeout: 300 
