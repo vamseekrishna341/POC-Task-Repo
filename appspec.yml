@@ -6,10 +6,3 @@ resources:
       alias: "lambda-alias"
       currentVersion: 3
       targetVersion: 4
-hooks:
-  BeforeAllowTraffic:
-    - location: "arn:aws:lambda:us-east-2:266735821233:function:my-lambda-function:lambda-alias"
-      timeout: 60
-  AfterAllowTraffic:
-    - location: "arn:aws:lambda:us-east-2:266735821233:function:my-lambda-function:lambda-alias"
-      timeout: 60
