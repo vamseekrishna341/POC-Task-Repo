@@ -5,4 +5,4 @@ Resources:
       Properties:
         Name: my-lambda-function
         Alias: alias       
-        
+        Version: 7
