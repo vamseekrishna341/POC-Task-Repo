@@ -1,6 +1,6 @@
-version: 0.2
-resources:
-  - type: AWS::Lambda::Function
-    properties:
-      name: "my-lambda-function"
-      alias: "lambda-alias"
+version: 0.0
+Resources:
+  - Type: AWS::Lambda::Function
+    Properties:
+      Name: "my-lambda-function" # Replace with your Lambda function's name
+      Alias: "alias" # Replace with your desired alias (e.g., "live" or "prod")
