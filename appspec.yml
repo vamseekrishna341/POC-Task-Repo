@@ -4,6 +4,4 @@ Resources:
       Type: AWS::Lambda::Function
       Properties:
         Name: my-lambda-function
-        Alias: alias
-        version: 7
-        
+        Alias: alias  # Use the alias pointing to version 7
