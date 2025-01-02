@@ -5,7 +5,6 @@ Resources:
       Properties:
         Name: my-lambda-function
         Alias: alias
-        FunctionName: my-lambda-function
         Handler: lambda_function.lambda_handler
         Role: arn:aws:iam::266735821233:role/Lambda-POC-Task-Role
         Runtime: Python3.12
