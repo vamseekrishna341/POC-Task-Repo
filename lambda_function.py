@@ -1,6 +1,6 @@
 def lambda_handler(event, context):
     """
-    Example Lambda function that returns 'Hello World' when tested.
+    Example Lambda function that returns 'Hello Sai' when tested.
     """
     return {
         'statusCode': 200,
