@@ -4,8 +4,5 @@ Resources:
       Type: AWS::Lambda::Function
       Properties:
         Name: my-lambda-function
-        Alias: alias        
-        Role: arn:aws:iam::266735821233:role/Lambda-POC-Task-Role
-        Runtime: Python3.12
-        MemorySize: 128
-        Timeout: 10
+        Alias: alias       
+        
