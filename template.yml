@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Update Lambda Function
+
+Resources:
+  LambdaFunction:
+    Type: 'AWS::Lambda::Function'
+    Properties:
+      FunctionName: my-lambda-function
+      Code: 
+        S3Bucket: !Sub "${ArtifactBucket}"
+        S3Key: !Sub "${ArtifactObjectKey}"
