@@ -1,8 +1,6 @@
-version: 0.0
+version: 0.2
 resources:
   - type: AWS::Lambda::Function
     properties:
-      functionName: "my-lambda-function"
+      name: "my-lambda-function"
       alias: "lambda-alias"
-      currentVersion: 5
-      targetVersion: 6
