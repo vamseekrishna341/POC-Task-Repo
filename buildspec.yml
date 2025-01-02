@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       nodejs: 0
     commands:
-      - aws cloudformation package --template-file template.yaml --s3-bucket auto-aws-db-shutdown-deployment-artifacts --output-template-file outputTemplate.yaml
+      - aws cloudformation package --template-file template.yaml --s3-bucket lambda-bucket-005 --output-template-file outputTemplate.yaml
 artifacts:
   type: zip
   files:
