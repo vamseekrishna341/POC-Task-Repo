@@ -1,27 +1,6 @@
-version: 0.2
-
-phases:
-  install:
-    runtime-versions:
-      python: 3.9
-    commands:
-      - echo "Installing dependencies..."
-      - pip install -r requirements.txt -t package/ # Install dependencies into a separate folder
-  build:
-    commands:
-      - echo "Copying Lambda function code..."
-      - cp lambda_function.py package/ # Copy the Lambda function file into the package folder
-      - cd package
-      - echo "Zipping only the required files..."
-      - zip -r ../function.zip . # Zip only the contents of the package folder
-      - cd ..
-      - echo "Build and packaging completed."
-  post_build:
-    commands:
-      - echo "Build stage completed successfully."
-
-artifacts:
-  files:
-    - function.zip            # Ensure only the ZIP file is included
-    - appspec.yml             # Include the AppSpec file for deployment
-  discard-paths: no
+version: 0.0
+Resources:
+  - Type: AWS::Lambda::Function
+    Properties:
+      Name: "my-lambda-function" # Replace with your Lambda function's name
+      Alias: "alias" # Replace with your desired alias (e.g., "live" or "prod")
