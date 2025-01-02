@@ -11,12 +11,19 @@ Parameters:
   ArtifactObjectKey:
     Type: String
     Description: S3 key of the Lambda function code artifact
+  LambdaRoleArn:
+    Type: String
+    Description: ARN of the existing IAM role for the Lambda function
  
 Resources:
-  LambdaFunction:
-    Type: 'AWS::Lambda::Function'
+  LambdaFunctionUpdate:
+    Type: AWS::Lambda::Function
     Properties:
       FunctionName: !Ref LambdaFunctionName
       Code: 
         S3Bucket: !Ref ArtifactBucket
         S3Key: !Ref ArtifactObjectKey
+      Role: !Ref LambdaRoleArn
+    UpdatePolicy:
+      CodeUpdatePolicy:
+        ApplyCodeUpdatesOnly: true
