@@ -6,19 +6,22 @@ phases:
       python: 3.9
     commands:
       - echo "Installing dependencies..."
-      - pip install -r requirements.txt -t .
-      - pip install boto3
+      - pip install -r requirements.txt -t package/ # Install dependencies in a separate folder
   build:
     commands:
       - echo "Zipping the Lambda function code..."
-      - zip -r function.zip . 
+      - cp lambda_function.py package/ # Copy the main Lambda function file
+      - cd package
+      - zip -r ../function.zip . # Create ZIP file with only required files
+      - cd ..
+      - echo "Zip file created successfully."
       - ls -lh function.zip
   post_build:
     commands:
-      - echo "Deploying the Lambda function..."
-      - python deploy_lambda.py my-lambda-function function.zip
+      - echo "Build completed successfully."
 
 artifacts:
   files:
     - function.zip
     - appspec.yml
+  discard-paths: no
