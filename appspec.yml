@@ -4,5 +4,6 @@ Resources:
       Type: AWS::Lambda::Function
       Properties:
         Name: my-lambda-function
-        Alias: live       
+        Alias: alias
+        version: 7
         
