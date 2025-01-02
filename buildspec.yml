@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 0
+    commands:
+      - aws cloudformation package --template-file template.yaml --s3-bucket auto-aws-db-shutdown-deployment-artifacts --output-template-file outputTemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - template.yml            
+    - outputTemplate.yml          
+  
