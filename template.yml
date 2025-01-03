@@ -17,7 +17,7 @@ Parameters:
  
 Resources:
   LambdaFunctionUpdate:
-    Type: AWS::Lambda::Version
+    Type: AWS::Lambda::Function
     Properties:
       FunctionName: !Ref LambdaFunctionName
       CodeSha256: ""
