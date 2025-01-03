@@ -8,13 +8,7 @@ phases:
   build:
     commands:
       - python -m unittest discover
-      - mkdir -p dist # Create the 'dist' directory
-
-  post_build:
-    commands:
-      - cp -r src dist/  # Copy only the 'src' directory to the 'dist' directory
 
 artifacts:
   files:
     - 'lambda_function.py'
-  base-directory: dist
