@@ -2,16 +2,23 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      python: 3.9
-  pre_build:
     commands:
-      - pip install -r requirements.txt -t .
+      - npm install 
+
   build:
     commands:
-      - zip -r function.zip .
+      - npm run build
+
+  post_build:
+    commands:
+      - zip -r function.zip . 
 
 artifacts:
   files:
-    - function.zip
-    - template.yml
+    - '**/*'
+  base-directory: dist 
+  name: my-lambda-function 
+  type: zip
+  discard-paths: no
+  packaging: zip
+  path: output/
