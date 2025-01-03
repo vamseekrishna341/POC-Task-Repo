@@ -8,13 +8,13 @@ phases:
   build:
     commands:
       - python -m unittest discover 
+artifacts:
+  files:
+    - '**/*' 
+  base-directory: dist 
+  name: my-lambda-function 
+  type: zip
+  discard-paths: no
+  packaging: zip
+  path: output/ 
 
-  artifacts:
-    files:
-      - '**/*' 
-    base-directory: dist 
-    name: my-lambda-function 
-    type: zip
-    discard-paths: no
-    packaging: zip
-    path: output/
