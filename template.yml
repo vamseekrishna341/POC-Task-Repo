@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Update Lambda Function
- 
+
 Parameters:
   LambdaFunctionName:
     Type: String
@@ -11,19 +11,26 @@ Parameters:
   ArtifactObjectKey:
     Type: String
     Description: S3 key of the Lambda function code artifact
-  LambdaRoleArn:
-    Type: String
-    Description: ARN of the existing IAM role for the Lambda function
- 
+
 Resources:
-  LambdaFunctionUpdate:
+  # Update the existing Lambda function with new code from S3
+  MyLambdaFunction:
     Type: AWS::Lambda::Function
     Properties:
       FunctionName: !Ref LambdaFunctionName
-      CodeSha256: ""
-      S3Bucket: !Ref ArtifactBucket
-      S3Key: !Ref ArtifactObjectKey
       Role: !Ref LambdaRoleArn
+      Code:
+        S3Bucket: !Ref ArtifactBucket
+        S3Key: !Ref ArtifactObjectKey
+      Handler: index.handler
+      Runtime: nodejs14.x  # Adjust the runtime accordingly
+
+  # Create a new version of the Lambda function
+  LambdaFunctionUpdate:
+    Type: AWS::Lambda::Version
+    Properties:
+      FunctionName: !Ref LambdaFunctionName
+
     UpdatePolicy:
       CodeUpdatePolicy:
         ApplyCodeUpdatesOnly: true
