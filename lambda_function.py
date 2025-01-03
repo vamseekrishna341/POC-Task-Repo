@@ -5,7 +5,7 @@ def lambda_handler(event, context):
     Lambda function that returns a greeting and performs a simple arithmetic operation.
     """
     # Get the name from the event, default to 'World' if not provided
-    name = event.get('name', 'Space')
+    name = event.get('name', 'Spaces')
     # Get numbers and operation from the event, with defaults
     num1 = event.get('num1', 0)
     num2 = event.get('num2', 0)
