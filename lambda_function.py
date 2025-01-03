@@ -7,8 +7,8 @@ def lambda_handler(event, context):
     # Get the name from the event, default to 'World' if not provided
     name = event.get('name', 'World')
     # Get numbers and operation from the event, with defaults
-    num1 = event.get('num1', 0)
-    num2 = event.get('num2', 0)
+    num1 = event.get('num1', 5)
+    num2 = event.get('num2', 6)
     operation = event.get('operation', 'add')
  
     # Perform the arithmetic operation
