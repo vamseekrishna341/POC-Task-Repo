@@ -1,10 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Update Lambda Function
  
-Parameters:
-  LambdaFunctionName:
-    Type: String
-    Description: Name of the existing Lambda function to update
+Parameters:  
   ArtifactBucket:
     Type: String
     Description: S3 bucket containing the Lambda function code
@@ -18,8 +15,7 @@ Parameters:
 Resources:
   LambdaFunctionUpdate:
     Type: AWS::Lambda::Function
-    Properties:
-      FunctionName: !Ref LambdaFunctionName
+    Properties:      
       Code: 
         S3Bucket: !Ref ArtifactBucket
         S3Key: !Ref ArtifactObjectKey
