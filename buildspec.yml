@@ -16,7 +16,7 @@ phases:
 
 artifacts:
   files:
-    - 'lambda_function.py'' 
+    - 'lambda_function.py'
   base-directory: dist 
   name: my-lambda-function 
   type: zip
