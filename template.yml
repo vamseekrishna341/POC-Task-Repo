@@ -24,6 +24,7 @@ Resources:
         S3Bucket: !Ref ArtifactBucket
         S3Key: !Ref ArtifactObjectKey
       Role: !Ref LambdaRoleArn
+    DeletionPolicy: Retain
     UpdatePolicy:
       CodeUpdatePolicy:
         ApplyCodeUpdatesOnly: true
