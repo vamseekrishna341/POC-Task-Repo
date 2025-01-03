@@ -21,8 +21,8 @@ Resources:
     Properties:
       FunctionName: !Ref LambdaFunctionName
       CodeSha256: ""
-        S3Bucket: !Ref ArtifactBucket
-        S3Key: !Ref ArtifactObjectKey
+      S3Bucket: !Ref ArtifactBucket
+      S3Key: !Ref ArtifactObjectKey
       Role: !Ref LambdaRoleArn
     UpdatePolicy:
       CodeUpdatePolicy:
