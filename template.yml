@@ -24,6 +24,3 @@ Resources:
         S3Bucket: !Ref ArtifactBucket
         S3Key: !Ref ArtifactObjectKey
       Role: !Ref LambdaRoleArn
-    UpdatePolicy:
-      CodeUpdatePolicy:
-        ApplyCodeUpdatesOnly: true
