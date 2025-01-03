@@ -3,22 +3,18 @@ version: 0.2
 phases:
   install:
     commands:
-      - npm install 
+      - pip install -r requirements.txt 
 
   build:
     commands:
-      - npm run build
+      - python -m unittest discover 
 
-  post_build:
-    commands:
-      - zip -r function.zip . 
-
-artifacts:
-  files:
-    - '**/*'
-  base-directory: dist 
-  name: my-lambda-function 
-  type: zip
-  discard-paths: no
-  packaging: zip
-  path: output/
+  artifacts:
+    files:
+      - '**/*' 
+    base-directory: dist 
+    name: my-lambda-function 
+    type: zip
+    discard-paths: no
+    packaging: zip
+    path: output/
