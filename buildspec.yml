@@ -3,18 +3,23 @@ version: 0.2
 phases:
   install:
     commands:
-      - pip install -r requirements.txt 
+      - pip install -r requirements.txt
 
   build:
     commands:
-      - python -m unittest discover 
+      - python -m unittest discover
+      - mkdir -p dist # Create the 'dist' directory
+
+  post_build:
+    commands:
+      - cp -r src dist/  # Copy only the 'src' directory to the 'dist' directory
+
 artifacts:
   files:
     - '**/*' 
-  base-directory: dist
+  base-directory: dist 
   name: my-lambda-function 
   type: zip
   discard-paths: no
   packaging: zip
-  path: output/ 
-
+  path: output/
