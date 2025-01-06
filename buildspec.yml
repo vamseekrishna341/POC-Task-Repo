@@ -7,8 +7,9 @@ phases:
 
   build:
     commands:
-      - python -m unittest discover     
+      - python -m unittest discover
 
 artifacts:
   files:
-    - 'lambda_function.py'
+    - '**/*'  # Include all files and directories in the root directory
+  discard-paths: no  # Retain the directory structure in the zip file
