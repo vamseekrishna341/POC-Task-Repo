@@ -7,10 +7,8 @@ phases:
 
   build:
     commands:
-      - python -m unittest discover
-      # Create a zip file of all files in the 'my_lambda_folder' directory
-      - zip -r lambda_function.zip my-lambda-function/
+      - python -m unittest discover     
 
 artifacts:
   files:
-    - 'lambda_function.zip'
+    - 'lambda_function.py'
