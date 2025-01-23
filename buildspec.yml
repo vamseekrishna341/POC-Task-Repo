@@ -3,13 +3,19 @@ version: 0.2
 phases:
   install:
     commands:
-      - pip install -r requirements.txt
+      - pip install -r requirements.txt  # Install dependencies
 
   build:
     commands:
-      - python -m unittest discover
+      - python -m unittest discover  # Run unit tests
+      - echo "Packaging Lambda function..."
+      - zip -r function.zip .  # Package the entire directory into a ZIP file
+      - echo "Updating Lambda function..."
+      - aws lambda update-function-code \
+          --function-name MyFunctionName \  # Replace with your Lambda function name
+          --zip-file fileb://function.zip  # Deploy the ZIP file to Lambda
 
 artifacts:
   files:
-    - '**/*'  # Include all files and directories in the root directory
+    - function.zip  # Save the Lambda package as an artifact
   discard-paths: no  # Retain the directory structure in the zip file
