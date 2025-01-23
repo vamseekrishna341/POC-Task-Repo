@@ -11,9 +11,7 @@ phases:
       - echo "Packaging Lambda function..."
       - zip -r function.zip .  # Package the entire directory into a ZIP file
       - echo "Updating Lambda function..."
-      - aws lambda update-function-code \
-          --function-name deployment-lambda-function \  # Replace with your Lambda function name
-          --zip-file fileb://function.zip  # Deploy the ZIP file to Lambda
+      - aws lambda update-function-code --function-name deployment-lambda-function --zip-file fileb://function.zip  # Deploy to Lambda
 
 artifacts:
   files:
